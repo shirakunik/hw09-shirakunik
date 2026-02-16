@@ -132,6 +132,7 @@ public class LanguageModel {
         Boolean randomGeneration = args[3].equals("random"); 
         String fileName = args[4]; 
         LanguageModel lm;
+        //
         if (randomGeneration) {
             lm = new LanguageModel(windowLength);
         } else {
