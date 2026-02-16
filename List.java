@@ -35,18 +35,26 @@ public class List {
         CharData cd = new CharData(chr); 
         Node next = new Node(cd, first);
         this.first = next; 
+        size++;
     }
     
     /** GIVE Textual representation of this list. */
     public String toString() {
-    String result = "";
-    Node current = first; 
-    while (current != null){
-        result = result + current.cp.toString();
+    String result = "(";
+    Node current = first;
+
+    while (current != null) {
+        result += current.cp.toString(); 
+        if (current.next != null) {
+            result += " ";    
+        }
         current = current.next;
     }
-        return result;
-    }
+
+    result += ")";
+    return result;
+}
+
 
     /** Returns the index of the first CharData object in this list
      *  that has the same chr value as the given char,
